@@ -1,0 +1,23 @@
+{
+  "name": "prestashop/kj_abonnement",
+  "description": "description",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Jing LEI",
+      "email": "email@example.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "PrestaShop\\Module\\Abonnement\\": "src/"
+    },
+    "config": {
+      "prepend-autoloader": false
+    },
+    "type": "prestashop-module"
+  },
+  "require": {
+    "stripe/stripe-php": "^7.95"
+  }
+}

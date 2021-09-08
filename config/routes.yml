@@ -1,0 +1,52 @@
+kj_abonnement_index:
+  path: /kj_abonnement/index
+  methods: [GET]
+  defaults:
+    _controller: 'PrestaShop\Module\Abonnement\Controller\AbonnementController::indexAction'
+    _legacy_controller: 'AdminAbonnement'
+    _legacy_link: 'AdminAbonnement'
+
+kj_abonnement_add:
+  path: /kj_abonnement/add
+  methods: [GET, POST]
+  defaults:
+    _controller: 'PrestaShop\Module\Abonnement\Controller\AbonnementController::addAction'
+
+kj_abonnement_edit:
+  path: /kj_abonnement/{idAbonnement}/edit
+  methods: [GET, POST]
+  defaults:
+    _controller: 'PrestaShop\Module\Abonnement\Controller\AbonnementController::editAction'
+  requirements:
+    idAbonnement: \d+
+
+kj_abonnement_delete:
+  path: /kj_abonnement/{idAbonnement}/delete
+  methods: [GET, POST]
+  defaults:
+    _controller: 'PrestaShop\Module\Abonnement\Controller\AbonnementController::deleteAction'
+  requirements:
+    idAbonnement: \d+
+
+
+kj_abonnement_configuration:
+  path: /kj_abonnement/configuration
+  methods: [GET, POST]
+  defaults:
+    _controller: 'PrestaShop\Module\Abonnement\Controller\ConfigurationController::configurationAction'
+
+
+#abonne
+kj_abonnement_abonne:
+  path: /kj_abonnement/abonne
+  methods: [GET]
+  defaults:
+    _controller: 'PrestaShop\Module\Abonnement\Controller\AbonneClientController::indexAction'
+    _legacy_controller: 'AdminAbonneClient'
+    _legacy_link: 'AdminAbonneClient'
+
+kj_abonnement_abonne_cancel:
+  path: /kj_abonnement/abonne/{idTransaction}/cancel
+  methods: [GET, POST]
+  defaults:
+    _controller: 'PrestaShop\Module\Abonnement\Controller\AbonneClientController::cancelAction'

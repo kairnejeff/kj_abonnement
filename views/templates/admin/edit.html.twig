@@ -1,0 +1,41 @@
+{% extends 'PrestaShopBundle:Admin:layout.html.twig' %}
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col">
+            {% block contact_form %}
+                {{ form_start(form) }}
+                <div class="card">
+                    <h3 class="card-header">
+                        <i class="material-icons">mail_outline</i>
+                        {{ 'Abonnement'|trans({}, 'Modules.Demodoctrine.Admin') }}
+                    </h3>
+                    <div class="card-block row">
+                        <div class="card-text">
+                            {{ form_errors(form) }}
+
+
+                            {{ form_row(form.id_abonnement) }}
+                            {{ form_row(form.titre) }}
+                            {{ form_row(form.sous_titre) }}
+                            {{ form_row(form.prix) }}
+                            {% if form.vars.value.image is not null %}
+                                <div class="float-right">
+                                    <img src="{{ asset('../modules/kj_abonnement/img/' ~ form.vars.value.image) }}" height="100">
+                                </div>
+                                <div class="clearfix"></div>
+                            {% endif %}
+                            {{ form_row(form.image) }}
+                            {{ form_row(form.description) }}
+
+                            {% block item_form_rest %}
+                                {{ form_rest(form) }}
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+                {{ form_end(form) }}
+            {% endblock %}
+
+        </div>
+    </div>
+{% endblock %}

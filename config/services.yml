@@ -1,0 +1,63 @@
+services:
+
+#Abonnement
+  prestashop.module.kj_abonnement.grid.definition.factory.abonnement:
+    class: 'PrestaShop\Module\Abonnement\Grid\Definition\Factory\AbonnementDefinitionFactory'
+    parent: 'prestashop.core.grid.definition.factory.abstract_grid_definition'
+
+  prestashop.module.kj_abonnement.grid.query_builder.abonnement:
+    class: 'PrestaShop\Module\Abonnement\Grid\Query\AbonnementQueryBuilder'
+    parent: 'prestashop.core.grid.abstract_query_builder'
+    public: true
+    arguments:
+      - '@prestashop.core.query.doctrine_search_criteria_applicator'
+
+  prestashop.module.kj_abonnement.grid.data_provider.abonnement:
+    class: '%prestashop.core.grid.data.factory.doctrine_grid_data_factory%'
+    arguments:
+      - '@prestashop.module.kj_abonnement.grid.query_builder.abonnement'
+      - '@prestashop.core.hook.dispatcher'
+      - '@prestashop.core.grid.query.doctrine_query_parser'
+      - 'abonnement'
+
+  prestashop.module.kj_abonnement.grid.factory.abonnement:
+    class: 'PrestaShop\PrestaShop\Core\Grid\GridFactory'
+    arguments:
+      - '@prestashop.module.kj_abonnement.grid.definition.factory.abonnement'
+      - '@prestashop.module.kj_abonnement.grid.data_provider.abonnement'
+      - '@prestashop.core.grid.filter.form_factory'
+      - '@prestashop.core.hook.dispatcher'
+
+#AbonneClient
+  prestashop.module.kj_abonnement.grid.definition.factory.abonneclient:
+    class: 'PrestaShop\Module\Abonnement\Grid\Definition\Factory\AbonneClientDefinitionFactory'
+    parent: 'prestashop.core.grid.definition.factory.abstract_grid_definition'
+
+  prestashop.module.kj_abonnement.grid.query_builder.abonneclient:
+    class: 'PrestaShop\Module\Abonnement\Grid\Query\AbonneClientQueryBuilder'
+    parent: 'prestashop.core.grid.abstract_query_builder'
+    public: true
+    arguments:
+      - '@prestashop.core.query.doctrine_search_criteria_applicator'
+
+  prestashop.module.kj_abonnement.grid.data_provider.abonneclient:
+    class: '%prestashop.core.grid.data.factory.doctrine_grid_data_factory%'
+    arguments:
+      - '@prestashop.module.kj_abonnement.grid.query_builder.abonneclient'
+      - '@prestashop.core.hook.dispatcher'
+      - '@prestashop.core.grid.query.doctrine_query_parser'
+      - 'abonnementClient'
+
+  prestashop.module.kj_abonnement.grid.factory.abonneclient:
+    class: 'PrestaShop\PrestaShop\Core\Grid\GridFactory'
+    arguments:
+      - '@prestashop.module.kj_abonnement.grid.definition.factory.abonneclient'
+      - '@prestashop.module.kj_abonnement.grid.data_provider.abonneclient'
+      - '@prestashop.core.grid.filter.form_factory'
+      - '@prestashop.core.hook.dispatcher'
+
+
+  PrestaShop\Module\Abonnement\Controller\AbonnementController:
+    class: 'PrestaShop\Module\Abonnement\Controller\AbonnementController'
+    arguments:
+      - '@doctrine.orm.default_entity_manager'
