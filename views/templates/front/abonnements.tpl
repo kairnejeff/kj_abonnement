@@ -10,10 +10,11 @@
 
         <div class="bloc-abonnement-text">
             <h2>Avec l'abonnement <strong>Passion Nature</strong>, <br />profitez immédiatement de nombreux avantages</h2>
-            <div class="avantage">
-                <h3>Bénéficiez de 5% <span>de remise</span></h3>
-            </div>
             <div class="avantages">
+                <div class="avantage">
+                    <h3>Bénéficiez de 5% <span>de remise</span></h3>
+                </div>
+
                 <div class="avantage">
                     <h3>Frais de port offerts <span>sur toutes vos commandes</span></h3>
                 </div>
