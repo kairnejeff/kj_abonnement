@@ -1,9 +1,9 @@
 {extends file='page.tpl'}
 {block name="page_content"}
     <div class="abonnement-header">
-        <h1>Choisissez l'abonnement Passion Nature</h1>
+        <h1>Choisissez l'abonnement<br /> Passion Nature</h1>
         <img src="/themes/karinejeff/assets/img/abonnement/abonnement.png" alt="abonnement" /></div>
-    <div class="bloc-abonnement">
+    <div class="abonnement-description">
         <p>Texte sur 2 lignes. Soyez ainsi remercié de votre fidélité et abonnez-vous à Passion Nature, sans engagement et résiliable tout moment.</p>
     </div>
     <div class="bloc-abonnement">
