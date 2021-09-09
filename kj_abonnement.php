@@ -44,8 +44,8 @@ class Kj_Abonnement extends Module
         $sql=array();
         $sql[]="CREATE TABLE ". _DB_PREFIX_ . "abonnement (id_abonnement INT AUTO_INCREMENT NOT NULL, id_abonnement_stripe VARCHAR(255) NOT NULL, titre VARCHAR(255) NULL, sous_titre VARCHAR(255) NULL, prix DOUBLE PRECISION NULL, image VARCHAR(255) NULL, description LONGTEXT NULL, PRIMARY KEY(id_abonnement)) DEFAULT CHARACTER SET utf8mb4 ";
         $sql[]="CREATE TABLE ". _DB_PREFIX_ . "stripe_client (ps_id_client INT NOT NULL, stripe_id_client VARCHAR(255) NOT NULL, PRIMARY KEY(ps_id_client)) DEFAULT CHARACTER SET utf8mb4" ;
-        $sql[] ="CREATE TABLE ". _DB_PREFIX_ . "abonne_client (id_transaction VARCHAR(255) NOT NULL, ps_id_client INT NOT NULL, id_abonnement INT NOT NULL, date_start DATETIME NOT NULL, status VARCHAR(
-            255) NOT NULL, INDEX IDX_6B9CCFE89098E86C (id_transaction), PRIMARY KEY(id_transaction)) DEFAULT CHARACTER SET utf8mb4";
+        $sql[] ="CREATE TABLE ". _DB_PREFIX_ . "abonne_client (id_transaction VARCHAR(150) NOT NULL, ps_id_client INT NOT NULL, id_abonnement INT NOT NULL, date_start DATETIME NOT NULL, status VARCHAR(
+            255) NOT NULL, PRIMARY KEY(id_transaction)) DEFAULT CHARACTER SET utf8mb4";
 
         $this->excuteAllQueries($sql);
         return true;

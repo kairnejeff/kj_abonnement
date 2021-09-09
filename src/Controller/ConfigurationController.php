@@ -14,10 +14,10 @@ class ConfigurationController extends FrameworkBundleAdminController
     public function configurationAction(Request $request)
     {
         $configurtaion = new ConfigurationStripe();
-        if($public_key=\Configuration::getIdByName('KJ_STRIPE_PUBLIC_KEY')){
+        if($public_key=\Configuration::get('KJ_STRIPE_PUBLIC_KEY')){
             $configurtaion->setPublicKey($public_key);
-            $configurtaion->setSecretKey(\Configuration::getIdByName('KJ_STRIPE_SECRET_KEY'));
-        };
+            $configurtaion->setSecretKey(\Configuration::get('KJ_STRIPE_SECRET_KEY'));
+        }
         $form = $this->createForm(ConfigurationStripeType::class, $configurtaion)->handleRequest($request);
         if ($form->isSubmitted()) {
             \Configuration::updateValue('KJ_STRIPE_PUBLIC_KEY',$configurtaion->getPublicKey());

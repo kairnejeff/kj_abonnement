@@ -15,7 +15,7 @@ class Kj_abonnementShowAbonnementModuleFrontController extends ModuleFrontContro
         $this->context->smarty->assign(
             array(
                 'abonnements' => $listAbonnement,
-                'imgPath'=>_PS_MODULE_DIR_ . "kj_abonnement" . DIRECTORY_SEPARATOR . "img". DIRECTORY_SEPARATOR,
+                'imgPath'=>__PS_BASE_URI__.DIRECTORY_SEPARATOR . "modules" .DIRECTORY_SEPARATOR . "kj_abonnement" . DIRECTORY_SEPARATOR . "img". DIRECTORY_SEPARATOR,
                 'link'=>$this->context->link->getModuleLink('kj_abonnement', 'abonner', array(), true)
             ));
         $this->setTemplate('module:kj_abonnement/views/templates/front/abonnements.tpl');
