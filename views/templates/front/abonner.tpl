@@ -15,12 +15,6 @@
 
             <!-- Payment form -->
             <div class="form-group">
-                <label>Nom</label>
-                <div id="name" class="field">
-                    <input type="text" name="username" id="username" class="field" placeholder="Enter name" required="" autofocus="">
-                </div>
-            </div>
-            <div class="form-group">
                 <label>Numéro de carte</label>
                 <div id="card_number" class="field"></div>
             </div>
