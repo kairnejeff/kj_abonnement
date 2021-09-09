@@ -3,11 +3,10 @@
 
 
 {block name="page_content"}
-
-
+    <section class="stripe-form">
     <form action="{$link}" method="POST" id="paymentFrm">
         <div class="panel-heading">
-            <h3 class="panel-title">Subscription with Stripe</h3>
+            <h2 class="panel-title">Informations de votra carte</h2>
         </div>
         <input name='id_abonnement' type="hidden" value="{$id_abonnement}" class="hidden" />
         <div class="panel-body">
@@ -16,30 +15,27 @@
 
             <!-- Payment form -->
             <div class="form-group">
-                <label>NAME</label>
-                <input type="text" name="username" id="username" class="field" placeholder="Enter name" required="" autofocus="">
+                <label>Nom</label>
+                <div id="name" class="field">
+                    <input type="text" name="username" id="username" class="field" placeholder="Enter name" required="" autofocus="">
+                </div>
             </div>
             <div class="form-group">
-                <label>CARD NUMBER</label>
+                <label>Numéro de carte</label>
                 <div id="card_number" class="field"></div>
             </div>
-            <div class="row">
-                <div class="left">
-                    <div class="form-group">
-                        <label>EXPIRY DATE</label>
-                        <div id="card_expiry" class="field"></div>
-                    </div>
-                </div>
-                <div class="right">
-                    <div class="form-group">
-                        <label>CVC CODE</label>
-                        <div id="card_cvc" class="field"></div>
-                    </div>
-                </div>
+            <div class="form-group">
+                <label>Date d'expiration</label>
+                <div id="card_expiry" class="field"></div>
             </div>
-            <button type="submit" class="btn btn-success" id="payBtn">Submit Payment</button>
+            <div class="form-group">
+                <label>Code CVC</label>
+                <div id="card_cvc" class="field"></div>
+            </div>
+            <button type="submit" class="btn btn-primary" id="payBtn">Valider</button>
         </div>
     </form>
+    </section>
 
     <script src="https://js.stripe.com/v3/"></script>
     <script>

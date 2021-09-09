@@ -40,7 +40,7 @@
                     <div class="add-to-card">
                         <form method="post" action="{$link}">
                             <input name='id_abonnement' type="hidden" value="{$abonnement.id_abonnement}" class="hidden" />
-                            <button type="submit">Ajouter au panier</button>
+                            <button type="submit" class="btn btn-primary">Ajouter au panier</button>
                         </form>
                     </div>
                 </div>
