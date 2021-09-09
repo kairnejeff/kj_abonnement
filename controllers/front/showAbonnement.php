@@ -3,6 +3,9 @@
 
 class kj_abonnementshowabonnementModuleFrontController extends ModuleFrontController
 {
+    public function init(){
+        parent::init();
+    }
     public function initContent(){
         parent::initContent();
         $repository = $this->get('doctrine.orm.default_entity_manager')->getRepository(\PrestaShop\Module\Abonnement\Entity\Abonnement::class);
