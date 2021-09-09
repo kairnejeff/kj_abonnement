@@ -54,6 +54,7 @@ class  Kj_abonnementDesabonnerModuleFrontController extends ModuleFrontControlle
                     $manager->persist($myAbonnement);
                     $manager->flush();
                     $statusMsg = 'Cancel your subscription has been Successful!';
+                    $this->removeCustomerGroupAbonnement($this->context->customer->id,Configuration::get('KS_ABONNEMENT_ID_GROUP_CLIENT'));
                 }catch (Exception $e) {
                     $statusMsg = "Cancel your subscription failed (DB)!";
                 }
@@ -66,6 +67,13 @@ class  Kj_abonnementDesabonnerModuleFrontController extends ModuleFrontControlle
 
         return $statusMsg;
 
+    }
+
+    public function removeCustomerGroupAbonnement($id_customer,$id_group){
+        $sql= 'DELETE FROM ' . _DB_PREFIX_ . 'customer_group c
+            WHERE c.`id_customer` = ' . (int) $id_customer.
+            ' AND  c.`id_group` = ' . (int) $id_group ;
+        Db::getInstance()->execute($sql);
     }
 
 }

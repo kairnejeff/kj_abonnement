@@ -35,7 +35,7 @@ class Kj_abonnementPayerModuleFrontController extends ModuleFrontController
     public function initContent(){
         parent::initContent();
         $statusMsg=$this->sendRequestStripe();
-//        dump($statusMsg); dump($this->AbonneClient); die;
+     //dump($statusMsg); dump($this->AbonneClient); die;
         $this->context->smarty->assign(
             array(
                 'msg' => $statusMsg,
@@ -49,8 +49,6 @@ class Kj_abonnementPayerModuleFrontController extends ModuleFrontController
         $customerId=$this->context->customer->id;
         $manager=$this->get('doctrine.orm.default_entity_manager');
         $abonnement=$manager->getRepository(Abonnement::class)->find($this->id_abonnement);
-        //$stripe_customer = $manager->getRepository(StripeClient::class)->find($customerId);
-
         try {
             $customer = \Stripe\Customer::create(array(
                 'email' => $this->context->customer->email,
@@ -60,8 +58,6 @@ class Kj_abonnementPayerModuleFrontController extends ModuleFrontController
         }catch(Exception $e) {
             $api_error = $e->getMessage();
         }
-
-
         if(empty($api_error) && $customer){
             try {
                 $subscription = \Stripe\Subscription::create([
@@ -91,6 +87,7 @@ class Kj_abonnementPayerModuleFrontController extends ModuleFrontController
                         $manager->persist($AbonneClient);
                         $manager->flush();
                         $statusMsg = 'Your Subscription Payment has been Successful!';
+                        $this->context->customer->addGroups(array(Configuration::get('KS_ABONNEMENT_ID_GROUP_CLIENT')));
                     }catch (Exception $e) {
                         $statusMsg = "Subscription activation failed!";
                     }

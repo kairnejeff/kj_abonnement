@@ -17,11 +17,13 @@ class ConfigurationController extends FrameworkBundleAdminController
         if($public_key=\Configuration::get('KJ_STRIPE_PUBLIC_KEY')){
             $configurtaion->setPublicKey($public_key);
             $configurtaion->setSecretKey(\Configuration::get('KJ_STRIPE_SECRET_KEY'));
+            $configurtaion->setIdGroupClient(\Configuration::get('KS_ABONNEMENT_ID_GROUP_CLIENT'));
         }
         $form = $this->createForm(ConfigurationStripeType::class, $configurtaion)->handleRequest($request);
         if ($form->isSubmitted()) {
             \Configuration::updateValue('KJ_STRIPE_PUBLIC_KEY',$configurtaion->getPublicKey());
             \Configuration::updateValue('KJ_STRIPE_SECRET_KEY',$configurtaion->getSecretKey());
+            \Configuration::updateValue('KS_ABONNEMENT_ID_GROUP_CLIENT',$configurtaion->getIdGroupClient());
             return $this->redirectToRoute('kj_abonnement_index');
         }
 

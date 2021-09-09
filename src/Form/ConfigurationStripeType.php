@@ -5,6 +5,7 @@ namespace PrestaShop\Module\Abonnement\Form;
 
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -12,6 +13,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ConfigurationStripeType extends AbstractType
 {
+
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
@@ -20,6 +22,9 @@ class ConfigurationStripeType extends AbstractType
             ])
             ->add('secret_key', TextType::class, [
                 'label' => 'Clé secrète Stripe',
+            ])
+            ->add('id_group_client', TextType::class, [
+                'label' => 'id group client',
             ])->add('save', SubmitType::class, [
                 'attr' => ['class' => 'btn btn-primary'],
             ]);
