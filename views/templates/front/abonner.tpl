@@ -6,7 +6,7 @@
     <section class="stripe-form">
     <form action="{$link}" method="POST" id="paymentFrm">
         <div class="panel-heading">
-            <h2 class="panel-title">Informations de votra carte</h2>
+            <h2 class="panel-title">Informations de votre carte</h2>
         </div>
         <input name='id_abonnement' type="hidden" value="{$id_abonnement}" class="hidden" />
         <div class="panel-body">
