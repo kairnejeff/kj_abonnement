@@ -16,6 +16,9 @@ class Kj_abonnementAbonnerModuleFrontController extends ModuleFrontController
         }
         if(Tools::getIsset('id_abonnement')){
             $this->id_abonnement=Tools::getValue('id_abonnement');
+            $this->context->cookie->__set('id_abonnement', $this->id_abonnement);
+        }elseif ( $id_abonnement= $this->context->cookie->__get('id_abonnement')){
+            $this->id_abonnement=$id_abonnement;
         }else {
             Tools::redirect($this->context->link->getModuleLink('kj_abonnement', 'showAbonnement', array(), true));
         }

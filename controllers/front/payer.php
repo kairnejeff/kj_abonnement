@@ -101,7 +101,7 @@ class Kj_abonnementPayerModuleFrontController extends ModuleFrontController
                  $statusMsg = "Subscription creation failed! ".$api_error;
             }
         }else{
-            $statusMsg = "Invalid card details! $api_error";
+            $statusMsg = "Invalid card details!". $api_error;
         }
         return $statusMsg;
     }
