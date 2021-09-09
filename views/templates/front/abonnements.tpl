@@ -12,17 +12,16 @@
             <h2>Avec l'abonnement <strong>Passion Nature</strong>, <br />profitez immédiatement de nombreux avantages</h2>
             <div class="avantages">
                 <div class="avantage">
-                    <h3>Bénéficiez de 5% <span>de remise</span></h3>
-                </div>
-
-                <div class="avantage">
-                    <h3>Frais de port offerts <span>sur toutes vos commandes</span></h3>
+                    <h3>Bénéficiez de <br />5% <span>de remise</span></h3>
                 </div>
                 <div class="avantage">
-                    <h3>Remises exclusives <span>plus de3 fois par an</span></h3>
+                    <h3>Frais de port <br />offerts <span>sur toutes <br />vos commandes</span></h3>
                 </div>
                 <div class="avantage">
-                    <h3>Guides personnalisés <span>sur la nutrition, la cuisine</span></h3>
+                    <h3>Remises <br />exclusives <span>plus de 3 fois <br />par an</span></h3>
+                </div>
+                <div class="avantage">
+                    <h3>Guides <br />personnalisés <span>sur la nutrition, <br />la cuisine</span></h3>
                 </div>
             </div>
         </div>
