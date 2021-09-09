@@ -1,7 +1,7 @@
 <?php
 
 
-class  Kj_abonnementDesabonnerModuleFrontController extends ModuleFrontController
+class  kj_abonnementdesabonnerModuleFrontController extends ModuleFrontController
 {
     public function init(){
         parent::init();

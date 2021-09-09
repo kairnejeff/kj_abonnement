@@ -1,7 +1,7 @@
 <?php
 
 
-class Kj_abonnementAbonnerModuleFrontController extends ModuleFrontController
+class kj_abonnementabonnerModuleFrontController extends ModuleFrontController
 {
     private $id_abonnement;
 

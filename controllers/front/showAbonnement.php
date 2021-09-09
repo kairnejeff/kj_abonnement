@@ -1,7 +1,7 @@
 <?php
 
 
-class Kj_abonnementShowAbonnementModuleFrontController extends ModuleFrontController
+class kj_abonnementshowabonnementModuleFrontController extends ModuleFrontController
 {
     public function initContent(){
         parent::initContent();

@@ -3,7 +3,7 @@
 use \PrestaShop\Module\Abonnement\Entity\AbonneClient;
 use \PrestaShop\Module\Abonnement\Entity\Abonnement;
 
-class Kj_abonnementPayerModuleFrontController extends ModuleFrontController
+class kj_abonnementpayerModuleFrontController extends ModuleFrontController
 {
     private $id_abonnement;
     private $stripeToken;
