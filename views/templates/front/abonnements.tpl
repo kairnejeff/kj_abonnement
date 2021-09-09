@@ -13,14 +13,16 @@
             <div class="avantage">
                 <h3>Bénéficiez de 5% <span>de remise</span></h3>
             </div>
-            <div class="avantage">
-                <h3>Frais de port offerts <span>sur toutes vos commandes</span></h3>
-            </div>
-            <div class="avantage">
-                <h3>Remises exclusives <span>plus de3 fois par an</span></h3>
-            </div>
-            <div class="avantage">
-                <h3>Guides personnalisés <span>sur la nutrition, la cuisine</span></h3>
+            <div class="avantages">
+                <div class="avantage">
+                    <h3>Frais de port offerts <span>sur toutes vos commandes</span></h3>
+                </div>
+                <div class="avantage">
+                    <h3>Remises exclusives <span>plus de3 fois par an</span></h3>
+                </div>
+                <div class="avantage">
+                    <h3>Guides personnalisés <span>sur la nutrition, la cuisine</span></h3>
+                </div>
             </div>
         </div>
 
