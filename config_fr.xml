@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <module>
     <name>kj_abonnement</name>
-    <displayName><![CDATA[abonnement]]></displayName>
+    <displayName><![CDATA[Abonnement avec Stripe]]></displayName>
     <version><![CDATA[1.0.0]]></version>
-    <description><![CDATA[getsion abonemment with stripe]]></description>
+    <description><![CDATA[Getsion des abonemments avec stripe]]></description>
     <author><![CDATA[Jing]]></author>
     <tab><![CDATA[others]]></tab>
     <is_configurable>1</is_configurable>

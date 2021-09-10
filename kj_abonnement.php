@@ -23,7 +23,9 @@ class Kj_Abonnement extends Module
     }
 
     public function install(){
-        if (parent::install() && $this->registerHook('displayCustomerAccount')
+        if (parent::install()
+            && $this->registerHook('displayCustomerAccount')
+            && $this->registerHook('displayMembershipLink')
         ) {
             $this->createGroupClient();
             return $this->installDatabaseTables();
@@ -107,5 +109,27 @@ class Kj_Abonnement extends Module
             return $this->display(__FILE__, 'views/templates/front/account-abonnement.tpl');
         }
         return $this->display(__FILE__, 'views/templates/front/no-abonnement.tpl');
+    }
+
+    public function hookDisplayMembershipLink($params){
+        $id_customer= $params['id_customer'];
+        $abonne=false;
+        if($params['id_customer']!==null){
+            $abonnementClients = $this->get('doctrine.orm.default_entity_manager')->getRepository(\PrestaShop\Module\Abonnement\Entity\AbonneClient::class)->findBy(array('ps_id_client'=> $id_customer));
+            if(!empty($abonnementClients)){
+                foreach ($abonnementClients as $abonnementClient){
+                    if( $abonnementClient->getStatus()=='active'){
+                        $abonne=true;
+                        break;
+                    }
+                }
+            }
+        }
+        if(!$abonne){
+            $this->context->smarty->assign(array(
+                'link'=>$this->context->link->getModuleLink('kj_abonnement', 'showAbonnement', array(), true)
+            ));
+            return $this->display(__FILE__, 'views/templates/front/membership.tpl');
+        }
     }
 }
