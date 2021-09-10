@@ -11,5 +11,5 @@
             <p><b>Status:</b>{$abonnement.status}</p>
         {/if}
     </div>
-    <a href="index.php" class="btn-link">Back to Subscription Page</a>
+    <a href="{$link}" class="btn-link">Back to Subscription Page</a>
 {/block}

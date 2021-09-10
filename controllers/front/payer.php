@@ -39,6 +39,7 @@ class kj_abonnementpayerModuleFrontController extends ModuleFrontController
         $this->context->smarty->assign(
             array(
                 'msg' => $statusMsg,
+                'link'=>$this->context->link->getModuleLink('kj_abonnement', 'showAbonnement', array(), true),
                 'abonnement'=> $this->AbonneClient->toArray()
             ));
         $this->setTemplate('module:kj_abonnement/views/templates/front/status.tpl');

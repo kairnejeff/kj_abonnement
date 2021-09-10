@@ -70,9 +70,8 @@ class  kj_abonnementdesabonnerModuleFrontController extends ModuleFrontControlle
     }
 
     public function removeCustomerGroupAbonnement($id_customer,$id_group){
-        $sql= 'DELETE FROM ' . _DB_PREFIX_ . 'customer_group c
-            WHERE c.`id_customer` = ' . (int) $id_customer.
-            ' AND  c.`id_group` = ' . (int) $id_group ;
+        $sql= 'DELETE FROM ' . _DB_PREFIX_ . 'customer_group  WHERE `id_customer` = ' . (int) $id_customer.
+            ' AND  `id_group` = ' . (int) $id_group ;
         Db::getInstance()->execute($sql);
     }
 
