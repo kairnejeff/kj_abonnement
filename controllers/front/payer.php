@@ -88,6 +88,29 @@ class kj_abonnementpayerModuleFrontController extends ModuleFrontController
                         $manager->flush();
                         $statusMsg = 'Your Subscription Payment has been Successful!';
                         $this->context->customer->addGroups(array(Configuration::get('KS_ABONNEMENT_ID_GROUP_CLIENT')));
+
+                        Mail::Send(
+                            $this->context->customer->id_lang,
+                            'account_abonnement',
+                            Mail::l('New professional account request.',  $this->context->customer->id_lang),
+                            array(
+                                '{email}' => $this->context->customer->email,
+                                '{firstname}' => $this->context->customer->firstname,
+                                '{lastname}' => $this->context->customer->lastname,
+                                '{shopname}' => $this->context->shop->name,
+                                '{abonnement_titre}' => $abonnement->getTitre(),
+                                '{abonnement_prix}' => $abonnement->getPrix(),
+                                '{abonnement_description}' =>$abonnement->getDescription()
+                                ),
+
+                            $this->context->customer->email,
+                            Null,
+                            $this->context->customer->email,
+                            $this->context->customer->lastname,
+                            NULL,
+                            NULL,
+                            dirname(__FILE__).'../../mails/'
+                        );
                     }catch (Exception $e) {
                         $statusMsg = "Subscription activation failed!";
                     }

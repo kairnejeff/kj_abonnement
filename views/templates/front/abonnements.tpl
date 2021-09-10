@@ -34,7 +34,7 @@
                             <h2>{$abonnement.titre}</h2>
                             <div class="abonnement-sous-title">{$abonnement.sous_titre}</div>
                         </div>
-                        <div class="price"><span>{$abonnement.prix}</span></div>
+                        <div class="price"><span>{$abonnement.prix} €</span></div>
                     </div>
                     <div class="abonnement-image"><img src="{$imgPath}{$abonnement.image}" alt="mois.png" /></div>
                     <div class="add-to-card">

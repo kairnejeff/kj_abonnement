@@ -1,0 +1,13 @@
+
+[{shop_url}] 
+
+Vous venez de vous vous abonner à notre {abonnement_titre} !
+
+Votre reçu
+
+Nom abonnement : {abonnement_titre}
+Prix : {abonnement_prix}
+Description : {abonnement_description}
+
+Vous pouvez profiter de votre avantages {shop_name}
+

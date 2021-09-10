@@ -30,6 +30,8 @@ class AbonneClientController extends FrameworkBundleAdminController
         $abonneClient  = $em->getRepository(AbonneClient::class)->find($idTransaction);
         if($abonneClient->getStatus() !=='canceled'){
             $abonneClient->cancel();
+            //code need to be completed for removing le client from group "abonnement"
+            //see code in front controller desabonner.php
             $em->remove($abonneClient);
             $em->flush();
         }else{
