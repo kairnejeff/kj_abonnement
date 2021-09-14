@@ -106,7 +106,7 @@ class kj_abonnementpayerModuleFrontController extends ModuleFrontController
 
                             $this->context->customer->email,
                             Null,
-                            $this->context->customer->email,
+                            "contact@karinejeff.fr",
                             $this->context->customer->lastname,
                             NULL,
                             NULL,
